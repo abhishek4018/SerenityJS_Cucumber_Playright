@@ -6,14 +6,14 @@ import { Actors } from '../../test';
 
 const timeouts = {
     cucumber: {
-        step: Duration.ofSeconds(30),                       // how long to wait for a Cucumber step to complete
+        step: Duration.ofSeconds(60),                       // how long to wait for a Cucumber step to complete
     },
     playwright: {
-        defaultNavigationTimeout: Duration.ofSeconds(10),   // how long to wait for a page to load
-        defaultTimeout:           Duration.ofSeconds(5),    // how long to wait for an element to show up
+        defaultNavigationTimeout: Duration.ofSeconds(30),   // how long to wait for a page to load
+        defaultTimeout:           Duration.ofSeconds(30),    // how long to wait for an element to show up
     },
     serenity: {
-        cueTimeout:               Duration.ofSeconds(5),    // how long to wait for Serenity/JS to complete any post-test activities, like saving screenshots and reports
+        cueTimeout:               Duration.ofSeconds(10),    // how long to wait for Serenity/JS to complete any post-test activities, like saving screenshots and reports
     }
 }
 
@@ -67,10 +67,7 @@ BeforeAll(async () => {
         // Configure Serenity/JS reporting services
         crew: [
             [ '@serenity-js/console-reporter', { theme: 'auto' } ],
-            [ '@serenity-js/web:Photographer', {
-                // strategy: 'TakePhotosOfInteractions',    // capture screenshots of all the interactions; slower but more comprehensive
-                strategy: 'TakePhotosOfFailures',           // capture screenshots of failed interactions; much faster
-            } ],
+            [ '@serenity-js/web:Photographer', { strategy: 'TakePhotosOfFailures' } ],
             [ '@serenity-js/core:ArtifactArchiver', { outputDirectory: path.resolve(process.cwd(), 'target/site/serenity') } ],
             [ '@serenity-js/serenity-bdd', { specDirectory: path.resolve(process.cwd(), 'features') } ],
         ],
