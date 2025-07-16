@@ -9,3 +9,4 @@ node_modules
 target
 .gitpod
 .gitpod.yml
+.DS_Dtore
