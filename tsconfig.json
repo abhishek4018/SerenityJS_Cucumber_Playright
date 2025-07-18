@@ -13,8 +13,10 @@
   },
 
   "include": [
-    "features/**/*.ts",
-    "test/**/*.ts"
+     "features/**/*.ts",
+     "test/**/*.ts",
+     "step-definitions/**/*.ts",
+     "support/**/*.ts"
   ],
 
   "exclude": [

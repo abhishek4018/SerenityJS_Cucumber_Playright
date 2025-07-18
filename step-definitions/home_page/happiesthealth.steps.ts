@@ -6,20 +6,11 @@ import { waitForElementWithXPath } from '../../test/utils';
 import path from 'path';
 
 
-const baseUrls: Record<string, string> = {
-    dev: 'https://dev.happiesthealth.com/',
-    qa: 'https://qa.happiesthealth.com/',
-    prod: 'https://happiesthealth.com/',
-};
 
-function getBaseUrl() {
-    const env = process.env.ENVIRONMENT || 'prod';
-    return baseUrls[env] || baseUrls['prod'];
-}
 
 Given('the user navigates to the Happiest Health homepage', async () => {
     await actorInTheSpotlight().attemptsTo(
-        Navigate.to(getBaseUrl())
+        Navigate.to('')
     );
 });
 

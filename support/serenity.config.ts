@@ -2,7 +2,7 @@ import { AfterAll, BeforeAll, setDefaultTimeout, Before } from '@cucumber/cucumb
 import { configure, Duration, actorCalled } from '@serenity-js/core';
 import path from 'path';
 import * as playwright from 'playwright';
-import { Actors } from '../../test';
+import { Actors } from '../test';
 
 const timeouts = {
     cucumber: {
@@ -32,11 +32,11 @@ const environment = process.env.ENVIRONMENT || 'dev';
 
 // Map environment names to base URLs
 const baseUrls: Record<string, string> = {
-    dev: 'https://the-internet.herokuapp.com/',
-    qa: 'https://qa.the-internet.herokuapp.com/',
-    prod: 'https://prod.the-internet.herokuapp.com/',
+    dev: '',
+    qa: '',
+    prod: 'https://happiesthealth.com/',
 };
-const baseURL = baseUrls[environment] || baseUrls['dev'];
+const baseURL = baseUrls[environment] || baseUrls['qa'];
 
 let browser: playwright.Browser;
 
