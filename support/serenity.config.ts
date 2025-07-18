@@ -69,7 +69,10 @@ BeforeAll(async () => {
             [ '@serenity-js/console-reporter', { theme: 'auto' } ],
             [ '@serenity-js/web:Photographer', { strategy: 'TakePhotosOfFailures' } ],
             [ '@serenity-js/core:ArtifactArchiver', { outputDirectory: path.resolve(process.cwd(), 'target/site/serenity') } ],
-            [ '@serenity-js/serenity-bdd', { specDirectory: path.resolve(process.cwd(), 'features') } ],
+            [ '@serenity-js/serenity-bdd', { 
+                specDirectory: path.resolve(process.cwd(), 'features'),
+                project: 'My Custom Project Name'
+            } ],
         ],
 
         cueTimeout: timeouts.serenity.cueTimeout,

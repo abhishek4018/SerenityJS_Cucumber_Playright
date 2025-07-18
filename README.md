@@ -64,3 +64,25 @@ PowerShell ->	$env:BROWSER="firefox"; $env:ENVIRONMENT="dev"; npx cucumber-js --
 set BROWSER=firefox && set ENVIRONMENT=dev && npx cucumber-js --profile default --tags "@MyTest" && npx serenity-bdd run --features ./features
 
 $env:BROWSER="firefox"; $env:ENVIRONMENT="dev"; npx cucumber-js --profile default --tags "@MyTest"; npx serenity-bdd run --features ./features
+```
+
+## Running Tests and Generating Serenity/JS Report
+
+Below are commands to clean, run your tests, and generate the Serenity/JS report for different environments:
+
+### Mac/Linux (bash, zsh, etc.)
+```sh
+npm run clean; BROWSER=firefox ENVIRONMENT=prod npx cucumber-js --profile default --tags "@HappiestHealthHome"; npx serenity-bdd run --features ./features
+```
+
+### Windows Command Prompt (cmd.exe)
+```cmd
+npm run clean & set BROWSER=firefox & set ENVIRONMENT=prod & npx cucumber-js --profile default --tags "@HappiestHealthHome" & npx serenity-bdd run --features ./features
+```
+
+### Windows PowerShell
+```powershell
+npm run clean; $env:BROWSER="firefox"; $env:ENVIRONMENT="prod"; npx cucumber-js --profile default --tags "@HappiestHealthHome"; npx serenity-bdd run --features ./features
+```
+
+After running, open `target/site/serenity/index.html` in your browser to view the Serenity/JS report.
