@@ -5,6 +5,10 @@
 node_modules
 *.log
 
+# Playwright codegen scratch output (folder kept via .gitkeep)
+generated/codegen/*.ts
+!generated/codegen/.gitkeep
+
 # Build artifacts
 target
 .gitpod

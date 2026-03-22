@@ -10,7 +10,11 @@
     "test:report": "serenity-bdd run --features ./features",
     "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
     "lint": "eslint --ext ts --config .eslintrc.js .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "codegen": "playwright codegen",
+    "codegen:library": "mkdirp generated/codegen && playwright codegen --target javascript -o generated/codegen/recording.ts",
+    "codegen:library:preview": "playwright codegen --target javascript",
+    "codegen:playwright-test": "playwright codegen --target playwright-test"
   },
   "repository": {
     "type": "git",

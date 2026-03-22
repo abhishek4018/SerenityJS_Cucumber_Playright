@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Playwright: Codegen (record, default output)",
+      "type": "shell",
+      "command": "npm run codegen --",
+      "args": [],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      }
+    },
+    {
+      "label": "Playwright: Codegen (library → saves generated/codegen/recording.ts)",
+      "type": "shell",
+      "command": "npm run codegen:library --",
+      "args": [],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      }
+    },
+    {
+      "label": "Playwright: Codegen (library, preview only — no file)",
+      "type": "shell",
+      "command": "npm run codegen:library:preview --",
+      "args": [],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      }
+    }
+  ]
+}
