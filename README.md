@@ -120,12 +120,12 @@ To run **only tagged** scenarios and then the report (equivalent pieces of `npm 
 
 ### Mac/Linux (bash, zsh, etc.)
 ```sh
-npm run clean; BROWSER=firefox ENVIRONMENT=prod npx cucumber-js --profile default --tags "@HappiestHealthHome"; npx serenity-bdd run --features ./features
+npm run clean; BROWSER=firefox ENVIRONMENT=prod npx cucumber-js --profile default --tags "@redbus-scenario"; npx serenity-bdd run --features ./features
 ```
 
 ### Windows Command Prompt (cmd.exe)
 ```cmd
-npm run clean & set BROWSER=firefox & set ENVIRONMENT=prod & npx cucumber-js --profile default --tags "@HappiestHealthHome" & npx serenity-bdd run --features ./features
+npm run clean & set BROWSER=firefox & set ENVIRONMENT=prod & npx cucumber-js --profile default --tags "@redbus-scenario" & npx serenity-bdd run --features ./features
 ```
 
 ### Windows PowerShell
