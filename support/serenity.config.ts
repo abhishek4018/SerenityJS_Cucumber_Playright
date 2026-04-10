@@ -1,8 +1,12 @@
 import { AfterAll, BeforeAll, setDefaultTimeout, Before } from '@cucumber/cucumber';
 import { configure, Duration, actorCalled } from '@serenity-js/core';
 import path from 'path';
+import * as dotenv from 'dotenv';
 import * as playwright from 'playwright';
 import { Actors } from '../test';
+
+// Load environment variables from .env in the project root.
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const timeouts = {
     cucumber: {
